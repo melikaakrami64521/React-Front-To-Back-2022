@@ -58,7 +58,9 @@ const FeedbackForm = () => {
         <RatingSelect select={rating => setRating(rating)} />
         <div className="input-group">
           <input type="text" value={text} onChange={handleTextChange} placeholder="Write a review" />
-          <Button type="submit" disabled={btnDisabled}>Send</Button>
+          <Button type="submit" disabled={btnDisabled}>
+            {feedbackEdit.edit ? 'Update' : 'Create'}
+          </Button>
         </div>
 
         {message && <div className="message">{message}</div>}
