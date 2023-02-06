@@ -144,23 +144,23 @@ function Profile() {
 
         {loading ? (
           <></>
+        ) : listings?.length ? (
+          <>
+            <p className='listingText'>Your Listings</p>
+            <ul className='listingsList'>
+              {listings.map(listing => (
+                <ListingItem
+                  key={listing.id}
+                  id={listing.id}
+                  listing={listing.data}
+                  onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
+                />
+              ))}
+            </ul>
+          </>
         ) : (
-          listings?.length && (
-            <>
-              <p className='listingText'>Your Listings</p>
-              <ul className='listingsList'>
-                {listings.map(listing => (
-                  <ListingItem
-                    key={listing.id}
-                    id={listing.id}
-                    listing={listing.data}
-                    onDelete={() => onDelete(listing.id)}
-                    onEdit={() => onEdit(listing.id)}
-                  />
-                ))}
-              </ul>
-            </>
-          )
+          <></>
         )}
       </main>
     </div>

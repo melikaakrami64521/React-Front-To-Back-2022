@@ -7,20 +7,28 @@ function Explore() {
   return (
     <div className='explore'>
       <header>
-        <p className="pageHeader">Explore</p>
+        <p className='pageHeader'>Explore</p>
       </header>
 
       <main>
         <Slider />
-        <p className="exploreCategoryHeading">Categories</p>
-        <div className="exploreCategories">
+        <p className='exploreCategoryHeading'>Categories</p>
+        <div className='exploreCategories'>
           <Link to='/category/rent'>
-            <img src={rentCategoryImage} alt="rent" className='exploreCategoryImg' />
-            <p className="exploreCategoryName">Explore for rent</p>
+            <img
+              src={rentCategoryImage}
+              alt='rent'
+              className='exploreCategoryImg'
+            />
+            <p className='exploreCategoryName'>Explore for rent</p>
           </Link>
-          <Link to='/category/sell'>
-            <img src={sellCategoryImage} alt="sell" className='exploreCategoryImg' />
-            <p className="exploreCategoryName">Explore for sell</p>
+          <Link to='/category/sale'>
+            <img
+              src={sellCategoryImage}
+              alt='sell'
+              className='exploreCategoryImg'
+            />
+            <p className='exploreCategoryName'>Explore for sell</p>
           </Link>
         </div>
       </main>
