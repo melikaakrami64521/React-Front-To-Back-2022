@@ -5,13 +5,17 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "client": "npm run start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "zhenya-paitash",
   "license": "MIT",
   "dependencies": {
+    "@fastify/cors": "^8.2.0",
     "@fastify/formbody": "^7.4.0",
-    "@fastify/mongodb": "^6.2.0",
+    "@fastify/static": "^6.9.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^16.0.3",
